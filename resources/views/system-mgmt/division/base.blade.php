@@ -4,11 +4,11 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Division Mangement
+        Pengaturan Devisi
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> System Mangement</a></li>
-        <li class="active">Division</li>
+        <li><a href="#"><i class="fa fa-cogs"></i> Manajemen Sistem</a></li>
+        <li class="active">Devisi</li>
       </ol>
     </section>
     @yield('action-content')

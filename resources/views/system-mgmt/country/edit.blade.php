@@ -5,13 +5,13 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Update country</div>
+                <div class="panel-heading">Edit Negara</div>
                 <div class="panel-body">
                     <form class="form-horizontal" role="form" method="POST" action="{{ route('country.update', ['id' => $country->id]) }}">
                         <input type="hidden" name="_method" value="PATCH">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                            <label for="name" class="col-md-4 control-label">Country Name</label>
+                            <label for="name" class="col-md-4 control-label">Nama Negara</label>
 
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control" name="name" value="{{ $country->name }}" required autofocus>
@@ -24,7 +24,7 @@
                             </div>
                         </div>
                          <div class="form-group{{ $errors->has('country_code') ? ' has-error' : '' }}">
-                            <label for="country_code" class="col-md-4 control-label">Country Code</label>
+                            <label for="country_code" class="col-md-4 control-label">Kode Negara</label>
 
                             <div class="col-md-6">
                                 <input id="country_code" type="text" class="form-control" name="country_code" value="{{ $country->country_code }}" required>
@@ -39,7 +39,7 @@
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
-                                    Update
+                                    <span class="glyphicon glyphicon-edit"></span>   Simpan Edit
                                 </button>
                             </div>
                         </div>

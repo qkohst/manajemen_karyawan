@@ -5,12 +5,12 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Add new employee</div>
+                <div class="panel-heading">Tambah Karyawan Baru</div>
                 <div class="panel-body">
                     <form class="form-horizontal" role="form" method="POST" action="{{ route('employee-management.store') }}" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         <div class="form-group{{ $errors->has('firstname') ? ' has-error' : '' }}">
-                            <label for="firstname" class="col-md-4 control-label">First Name</label>
+                            <label for="firstname" class="col-md-4 control-label">Nama Depan</label>
 
                             <div class="col-md-6">
                                 <input id="firstname" type="text" class="form-control" name="firstname" value="{{ old('firstname') }}" required autofocus>
@@ -23,7 +23,7 @@
                             </div>
                         </div>
                         <div class="form-group{{ $errors->has('lastname') ? ' has-error' : '' }}">
-                            <label for="lastname" class="col-md-4 control-label">Last Name</label>
+                            <label for="lastname" class="col-md-4 control-label">Nama Belakang</label>
 
                             <div class="col-md-6">
                                 <input id="lastname" type="text" class="form-control" name="lastname" value="{{ old('lastname') }}" required>
@@ -36,7 +36,7 @@
                             </div>
                         </div>
                         <div class="form-group{{ $errors->has('middlename') ? ' has-error' : '' }}">
-                            <label for="middlename" class="col-md-4 control-label">Middle Name</label>
+                            <label for="middlename" class="col-md-4 control-label">Nama Tengah</label>
 
                             <div class="col-md-6">
                                 <input id="middlename" type="text" class="form-control" name="middlename" value="{{ old('middlename') }}" required>
@@ -49,7 +49,7 @@
                             </div>
                         </div>
                         <div class="form-group{{ $errors->has('address') ? ' has-error' : '' }}">
-                            <label for="address" class="col-md-4 control-label">Address</label>
+                            <label for="address" class="col-md-4 control-label">Alamat</label>
 
                             <div class="col-md-6">
                                 <input id="address" type="text" class="form-control" name="address" value="{{ old('address') }}" required>
@@ -62,10 +62,10 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-md-4 control-label">Country</label>
+                            <label class="col-md-4 control-label">Negara</label>
                             <div class="col-md-6">
                                 <select class="form-control js-country" name="country_id">
-                                    <option value="-1">Please select your country</option>
+                                    <option value="-1">Pilih Negara</option>
                                     @foreach ($countries as $country)
                                         <option value="{{$country->id}}">{{$country->name}}</option>
                                     @endforeach
@@ -73,10 +73,10 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-md-4 control-label">State</label>
+                            <label class="col-md-4 control-label">Provinsi</label>
                             <div class="col-md-6">
                                 <select class="form-control js-states" name="state_id">
-                                    <option value="-1">Please select your state</option>
+                                    <option value="-1">Pilih Provinsi</option>
                                     {{--  @foreach ($states as $state)
                                         <option value="{{$state->id}}">{{$state->name}}</option>
                                     @endforeach  --}}
@@ -84,10 +84,10 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-md-4 control-label">City</label>
+                            <label class="col-md-4 control-label">Kota/Kabupaten</label>
                             <div class="col-md-6">
                                 <select class="form-control js-cities" name="city_id">
-                                    <option value="-1">Please select your city</option>
+                                    <option value="-1">Pilih Kota/Kabupaten</option>
                                     {{--  @foreach ($cities as $city)
                                         <option value="{{$city->id}}">{{$city->name}}</option>
                                     @endforeach  --}}
@@ -95,7 +95,7 @@
                             </div>
                         </div>
                         <div class="form-group{{ $errors->has('zip') ? ' has-error' : '' }}">
-                            <label for="zip" class="col-md-4 control-label">Zip</label>
+                            <label for="zip" class="col-md-4 control-label">Kecamatan</label>
 
                             <div class="col-md-6">
                                 <input id="zip" type="text" class="form-control" name="zip" value="{{ old('zip') }}" required>
@@ -108,7 +108,7 @@
                             </div>
                         </div>
                         <div class="form-group{{ $errors->has('age') ? ' has-error' : '' }}">
-                            <label for="zip" class="col-md-4 control-label">Age</label>
+                            <label for="zip" class="col-md-4 control-label">Umur</label>
 
                             <div class="col-md-6">
                                 <input id="age" type="text" class="form-control" name="age" value="{{ old('age') }}" required>
@@ -121,7 +121,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-md-4 control-label">Birthday</label>
+                            <label class="col-md-4 control-label">Tanggal Lahir</label>
                             <div class="col-md-6">
                                 <div class="input-group date">
                                     <div class="input-group-addon">
@@ -132,7 +132,7 @@
                             </div>
                         </div>
                           <div class="form-group">
-                            <label class="col-md-4 control-label">Hired Date</label>
+                            <label class="col-md-4 control-label">Tanggal Mulai Kerja</label>
                             <div class="col-md-6">
                                 <div class="input-group date">
                                     <div class="input-group-addon">
@@ -143,7 +143,7 @@
                             </div>
                         </div>
                         <div class="form-group{{ $errors->has('department_id') ? ' has-error' : '' }}">
-                            <label class="col-md-4 control-label">Department</label>
+                            <label class="col-md-4 control-label">Departemen</label>
                             <div class="col-md-6">
                                 <select class="form-control" name="department_id">
                                     @foreach ($departments as $department)
@@ -158,7 +158,7 @@
                             </div>
                         </div>
                         <div class="form-group{{ $errors->has('division_id') ? ' has-error' : '' }}">
-                            <label class="col-md-4 control-label">Division</label>
+                            <label class="col-md-4 control-label">Devisi</label>
                             <div class="col-md-6">
                                 <select class="form-control" name="division_id">
                                     @foreach ($divisions as $division)
@@ -173,7 +173,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="avatar" class="col-md-4 control-label" >Picture</label>
+                            <label for="avatar" class="col-md-4 control-label" >Foto</label>
                             <div class="col-md-6">
                                 <input type="file" id="picture" name="picture" required >
                             </div>
@@ -181,7 +181,7 @@
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
-                                    Create
+                                <span class="glyphicon glyphicon-saved"></span>  Simpan
                                 </button>
                             </div>
                         </div>

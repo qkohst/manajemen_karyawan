@@ -6,10 +6,10 @@
   <div class="box-header">
     <div class="row">
         <div class="col-sm-8">
-          <h3 class="box-title">List of departments</h3>
+          <h3 class="box-title">Daftar Departemen</h3>
         </div>
         <div class="col-sm-4">
-          <a class="btn btn-primary" href="{{ route('department.create') }}">Add new department</a>
+          <a class="btn btn-primary" href="{{ route('department.create') }}"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Tambah Departemen</a>
         </div>
     </div>
   </div>
@@ -21,8 +21,8 @@
       </div>
       <form method="POST" action="{{ route('department.search') }}">
          {{ csrf_field() }}
-         @component('layouts.search', ['title' => 'Search'])
-          @component('layouts.two-cols-search-row', ['items' => ['Name'], 
+         @component('layouts.search', ['title' => 'Pencarian Data'])
+          @component('layouts.two-cols-search-row', ['items' => ['Nama'], 
           'oldVals' => [isset($searchingVals) ? $searchingVals['name'] : '']])
           @endcomponent
         @endcomponent
@@ -33,8 +33,8 @@
           <table id="example2" class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info">
             <thead>
               <tr role="row">
-                <th width="20%" class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Department: activate to sort column ascending">Department Name</th>
-                <th tabindex="0" aria-controls="example2" rowspan="1" colspan="2" aria-label="Action: activate to sort column ascending">Action</th>
+                <th width="20%" class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Department: activate to sort column ascending">Nama Departemen</th>
+                <th tabindex="0" aria-controls="example2" rowspan="1" colspan="2" aria-label="Action: activate to sort column ascending">Aksi</th>
               </tr>
             </thead>
             <tbody>
@@ -42,32 +42,28 @@
                 <tr role="row" class="odd">
                   <td>{{ $department->name }}</td>
                   <td>
-                    <form class="row" method="POST" action="{{ route('department.destroy', ['id' => $department->id]) }}" onsubmit = "return confirm('Are you sure?')">
+                    <form class="row" method="POST" action="{{ route('department.destroy', ['id' => $department->id]) }}" onsubmit = "return confirm('Apakah Anda Yakin Ingin Menghapus Data Departemen ?')">
                         <input type="hidden" name="_method" value="DELETE">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                        <a href="{{ route('department.edit', ['id' => $department->id]) }}" class="btn btn-warning col-sm-3 col-xs-5 btn-margin">
-                        Update
+                        <a href="{{ route('department.edit', ['id' => $department->id]) }}" class="btn btn-warning btn-margin">
+                          <span class="glyphicon glyphicon-pencil"></span>
+                          Edit
                         </a>
-                        <button type="submit" class="btn btn-danger col-sm-3 col-xs-5 btn-margin">
-                          Delete
+                        <button type="submit" class="btn btn-danger btn-margin">
+                          <span class="glyphicon glyphicon-trash"></span>
+                          Hapus
                         </button>
                     </form>
                   </td>
               </tr>
             @endforeach
             </tbody>
-            <tfoot>
-              <tr>
-                <th width="20%" rowspan="1" colspan="1">Department Name</th>
-                <th rowspan="1" colspan="2">Action</th>
-              </tr>
-            </tfoot>
           </table>
         </div>
       </div>
       <div class="row">
         <div class="col-sm-5">
-          <div class="dataTables_info" id="example2_info" role="status" aria-live="polite">Showing 1 to {{count($departments)}} of {{count($departments)}} entries</div>
+          <div class="dataTables_info" id="example2_info" role="status" aria-live="polite">Menampilkan 1 sampai {{count($departments)}} dari {{count($departments)}} data</div>
         </div>
         <div class="col-sm-7">
           <div class="dataTables_paginate paging_simple_numbers" id="example2_paginate">

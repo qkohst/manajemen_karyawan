@@ -4,9 +4,9 @@
     <!-- Logo -->
     <a href="index2.html" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>E</b>M</span>
+      <span class="logo-mini">MK</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg">{{ config('app.name', 'EmployeeManagement') }}</span>
+      <span class="logo-lg">Manajemen Karyawan</span>
     </a>
 
     <!-- Header Navbar -->
@@ -33,7 +33,7 @@
                 <img src="{{ asset("/bower_components/AdminLTE/dist/img/user2-160x160.jpg") }}" class="img-circle" alt="User Image">
 
                 <p>
-                  Hello {{ Auth::user()->username }}
+                  Hallo {{ Auth::user()->username }}
                 </p>
               </li>
               <!-- Menu Footer-->
@@ -48,7 +48,7 @@
                   </div>
                  <div class="pull-right">
                     <a class="btn btn-default btn-flat" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-                    Logout
+                    Keluar
                     </a>
                  </div>
                 @endif

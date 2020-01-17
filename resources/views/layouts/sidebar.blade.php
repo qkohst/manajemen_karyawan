@@ -16,39 +16,27 @@
         </div>
       </div>
 
-      <!-- search form (Optional) -->
-      <form action="#" method="get" class="sidebar-form">
-        <div class="input-group">
-          <input type="text" name="q" class="form-control" placeholder="Search...">
-              <span class="input-group-btn">
-                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
-                </button>
-              </span>
-        </div>
-      </form>
-      <!-- /.search form -->
-
       <!-- Sidebar Menu -->
       <ul class="sidebar-menu">
         <!-- Optionally, you can add icons to the links -->
-        <li class="active"><a href="/"><i class="fa fa-link"></i> <span>Dashboard</span></a></li>
-        <li><a href="{{ url('employee-management') }}"><i class="fa fa-link"></i> <span>Employee Management</span></a></li>
+        <li><a href="/"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+        <li><a href="{{ url('employee-management') }}"><i class="fa fa-users"></i> <span>Manajemen Karyawan</span></a></li>
         <li class="treeview">
-          <a href="#"><i class="fa fa-link"></i> <span>System Management</span>
+          <a href="#"><i class="fa fa-cogs"></i> <span>Manajemen Sistem</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="{{ url('system-management/department') }}">Department</a></li>
-            <li><a href="{{ url('system-management/division') }}">Division</a></li>
-            <li><a href="{{ url('system-management/country') }}">Country</a></li>
-            <li><a href="{{ url('system-management/state') }}">State</a></li>
-            <li><a href="{{ url('system-management/city') }}">City</a></li>
-            <li><a href="{{ url('system-management/report') }}">Report</a></li>
+            <li><a href="{{ url('system-management/department') }}">Departemen</a></li>
+            <li><a href="{{ url('system-management/division') }}">Divisi</a></li>
+            <li><a href="{{ url('system-management/country') }}">Negara</a></li>
+            <li><a href="{{ url('system-management/state') }}">Provinsi</a></li>
+            <li><a href="{{ url('system-management/city') }}">Kota/Kabupaten</a></li>
+            <li><a href="{{ url('system-management/report') }}">Laporan</a></li>
           </ul>
         </li>
-        <li><a href="{{ route('user-management.index') }}"><i class="fa fa-link"></i> <span>User management</span></a></li>
+        <li><a href="{{ route('user-management.index') }}"><i class="fa fa-user"></i> <span>Manajemen Pengguna</span></a></li>
       </ul>
       <!-- /.sidebar-menu -->
     </section>

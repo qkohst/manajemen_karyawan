@@ -5,13 +5,13 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Update employee</div>
+                <div class="panel-heading">Edit Data Karyawan</div>
                 <div class="panel-body">
                     <form class="form-horizontal" role="form" method="POST" action="{{ route('employee-management.update', ['id' => $employee->id]) }}" enctype="multipart/form-data">
                         <input type="hidden" name="_method" value="PATCH">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <div class="form-group{{ $errors->has('firstname') ? ' has-error' : '' }}">
-                            <label for="firstname" class="col-md-4 control-label">First Name</label>
+                            <label for="firstname" class="col-md-4 control-label">Nama Depan</label>
 
                             <div class="col-md-6">
                                 <input id="firstname" type="text" class="form-control" name="firstname" value="{{ $employee->firstname }}" required autofocus>
@@ -24,7 +24,7 @@
                             </div>
                         </div>
                         <div class="form-group{{ $errors->has('lastname') ? ' has-error' : '' }}">
-                            <label for="lastname" class="col-md-4 control-label">Last Name</label>
+                            <label for="lastname" class="col-md-4 control-label">Nama Belakang</label>
 
                             <div class="col-md-6">
                                 <input id="lastname" type="text" class="form-control" name="lastname" value="{{ $employee->lastname }}" required>
@@ -37,7 +37,7 @@
                             </div>
                         </div>
                         <div class="form-group{{ $errors->has('middlename') ? ' has-error' : '' }}">
-                            <label for="middlename" class="col-md-4 control-label">Middle Name</label>
+                            <label for="middlename" class="col-md-4 control-label">Nama Tengah</label>
 
                             <div class="col-md-6">
                                 <input id="middlename" type="text" class="form-control" name="middlename" value="{{ $employee->middlename }}" required>
@@ -50,7 +50,7 @@
                             </div>
                         </div>
                         <div class="form-group{{ $errors->has('address') ? ' has-error' : '' }}">
-                            <label for="address" class="col-md-4 control-label">Address</label>
+                            <label for="address" class="col-md-4 control-label">Alamat</label>
 
                             <div class="col-md-6">
                                 <input id="address" type="text" class="form-control" name="address" value="{{ $employee->address }}" required>
@@ -63,7 +63,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-md-4 control-label">City</label>
+                            <label class="col-md-4 control-label">Kota/Kabupaten</label>
                             <div class="col-md-6">
                                 <select class="form-control" name="city_id">
                                     @foreach ($cities as $city)
@@ -73,7 +73,7 @@
                             </div>
                         </div>
                               <div class="form-group">
-                            <label class="col-md-4 control-label">State</label>
+                            <label class="col-md-4 control-label">Provinsi</label>
                             <div class="col-md-6">
                                 <select class="form-control" name="state_id">
                                     @foreach ($states as $state)
@@ -83,7 +83,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-md-4 control-label">Country</label>
+                            <label class="col-md-4 control-label">Negara</label>
                             <div class="col-md-6">
                                 <select class="form-control" name="country_id">
                                     @foreach ($countries as $country)
@@ -93,7 +93,7 @@
                             </div>
                         </div>
                         <div class="form-group{{ $errors->has('zip') ? ' has-error' : '' }}">
-                            <label for="zip" class="col-md-4 control-label">Zip</label>
+                            <label for="zip" class="col-md-4 control-label">Kecamatan</label>
 
                             <div class="col-md-6">
                                 <input id="zip" type="text" class="form-control" name="zip" value="{{ $employee->zip }}" required>
@@ -106,7 +106,7 @@
                             </div>
                         </div>
                         <div class="form-group{{ $errors->has('age') ? ' has-error' : '' }}">
-                            <label for="zip" class="col-md-4 control-label">Age</label>
+                            <label for="zip" class="col-md-4 control-label">Umur</label>
 
                             <div class="col-md-6">
                                 <input id="age" type="text" class="form-control" name="age" value="{{ $employee->age }}" required>
@@ -119,7 +119,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-md-4 control-label">Birthday</label>
+                            <label class="col-md-4 control-label">Tanggal Lahir</label>
                             <div class="col-md-6">
                                 <div class="input-group date">
                                     <div class="input-group-addon">
@@ -130,7 +130,7 @@
                             </div>
                         </div>
                           <div class="form-group">
-                            <label class="col-md-4 control-label">Hired Date</label>
+                            <label class="col-md-4 control-label">Tanggal Mulai Kerja</label>
                             <div class="col-md-6">
                                 <div class="input-group date">
                                     <div class="input-group-addon">
@@ -141,7 +141,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-md-4 control-label">Department</label>
+                            <label class="col-md-4 control-label">Departemen</label>
                             <div class="col-md-6">
                                 <select class="form-control" name="department_id">
                                     @foreach ($departments as $department)
@@ -151,7 +151,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-md-4 control-label">Division</label>
+                            <label class="col-md-4 control-label">Devisi</label>
                             <div class="col-md-6">
                                 <select class="form-control" name="division_id">
                                     @foreach ($divisions as $division)
@@ -161,7 +161,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="avatar" class="col-md-4 control-label" >Picture</label>
+                            <label for="avatar" class="col-md-4 control-label" >Foto</label>
                             <div class="col-md-6">
                                 <img src="../../{{$employee->picture }}" width="50px" height="50px"/>
                                 <input type="file" id="picture" name="picture" />
@@ -170,7 +170,7 @@
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
-                                    Update
+                                <span class="glyphicon glyphicon-edit"></span>  Simpan Edit
                                 </button>
                             </div>
                         </div>
