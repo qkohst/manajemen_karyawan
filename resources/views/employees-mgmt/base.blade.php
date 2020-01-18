@@ -7,7 +7,7 @@
         Manajemen Karyawan
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-users"></i> Manajemen Karyawan</a></li>
+        <li><a href="#"><i class="fa fa-users"></i> Sistem Manajemen Karyawan</a></li>
         <li class="active">Manajemen Karyawan</li>
       </ol>
     </section>

@@ -6,10 +6,10 @@
   <div class="box-header">
     <div class="row">
         <div class="col-sm-8">
-          <h3 class="box-title">List of users</h3>
+          <h3 class="box-title">Daftar Pengguna</h3>
         </div>
         <div class="col-sm-4">
-          <a class="btn btn-primary" href="{{ route('user-management.create') }}">Add new user</a>
+          <a class="btn btn-primary" href="{{ route('user-management.create') }}"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Tambah Pengguna</a>
         </div>
     </div>
   </div>
@@ -39,9 +39,9 @@
               <tr role="row">
                 <th width="10%" class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Name: activate to sort column descending" aria-sort="ascending">User Name</th>
                 <th width="20%" class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Email: activate to sort column ascending">Email</th>
-                <th width="20%" class="sorting hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Email: activate to sort column ascending">First Name</th>
-                <th width="20%" class="sorting hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Email: activate to sort column ascending">Last Name</th>
-                <th tabindex="0" aria-controls="example2" rowspan="1" colspan="2" aria-label="Action: activate to sort column ascending">Action</th>
+                <th width="20%" class="sorting hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Email: activate to sort column ascending">Nama Depan</th>
+                <th width="20%" class="sorting hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Email: activate to sort column ascending">Nama Belakang</th>
+                <th tabindex="0" aria-controls="example2" rowspan="1" colspan="2" aria-label="Action: activate to sort column ascending">Aksi</th>
               </tr>
             </thead>
             <tbody>
@@ -52,15 +52,17 @@
                   <td class="hidden-xs">{{ $user->firstname }}</td>
                   <td class="hidden-xs">{{ $user->lastname }}</td>
                   <td>
-                    <form class="row" method="POST" action="{{ route('user-management.destroy', ['id' => $user->id]) }}" onsubmit = "return confirm('Are you sure?')">
+                    <form class="row" method="POST" action="{{ route('user-management.destroy', ['id' => $user->id]) }}" onsubmit = "return confirm('Apakah Anda Yakin Ingin Menghapus Data Pengguna ?')">
                         <input type="hidden" name="_method" value="DELETE">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                        <a href="{{ route('user-management.edit', ['id' => $user->id]) }}" class="btn btn-warning col-sm-3 col-xs-5 btn-margin">
-                        Update
+                        <a href="{{ route('user-management.edit', ['id' => $user->id]) }}" class="btn btn-warning btn-margin">
+                          <span class="glyphicon glyphicon-pencil"></span>
+                          Edit
                         </a>
                         @if ($user->username != Auth::user()->username)
-                         <button type="submit" class="btn btn-danger col-sm-3 col-xs-5 btn-margin">
-                          Delete
+                         <button type="submit" class="btn btn-danger btn-margin">
+                          <span class="glyphicon glyphicon-trash"></span>
+                          Hapus
                         </button>
                         @endif
                     </form>
@@ -68,21 +70,12 @@
               </tr>
             @endforeach
             </tbody>
-            <tfoot>
-              <tr>
-                <th width="10%" rowspan="1" colspan="1">User Name</th>
-                <th width="20%" rowspan="1" colspan="1">Email</th>
-                <th class="hidden-xs" width="20%" rowspan="1" colspan="1">First Name</th>
-                <th class="hidden-xs" width="20%" rowspan="1" colspan="1">Last Name</th>
-                <th rowspan="1" colspan="2">Action</th>
-              </tr>
-            </tfoot>
           </table>
         </div>
       </div>
       <div class="row">
         <div class="col-sm-5">
-          <div class="dataTables_info" id="example2_info" role="status" aria-live="polite">Showing 1 to {{count($users)}} of {{count($users)}} entries</div>
+          <div class="dataTables_info" id="example2_info" role="status" aria-live="polite">Menampilkan 1 sampai {{count($users)}} dari {{count($users)}} data</div>
         </div>
         <div class="col-sm-7">
           <div class="dataTables_paginate paging_simple_numbers" id="example2_paginate">
