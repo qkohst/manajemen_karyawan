@@ -4,11 +4,11 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Report
+        Laporan
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> System Mangement</a></li>
-        <li class="active">Report</li>
+        <li><a href="#"><i class="fa fa-cogs"></i> Manajemen Sistem</a></li>
+        <li class="active">Laporan</li>
       </ol>
     </section>
     @yield('action-content')

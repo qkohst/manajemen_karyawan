@@ -69,7 +69,7 @@ desired effect
         Dashboard
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Manajemen Karyawan</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-dashboard"></span> Manajemen Karyawan</a></li>
         <li class="active">Dashboard</li>
       </ol>
     </section>

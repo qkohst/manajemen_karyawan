@@ -4,11 +4,11 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        State Mangement
+        Pengaturan Kota/Kabupaten
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> System Mangement</a></li>
-        <li class="active">State</li>
+        <li><a href="#"><i class="fa fa-cogs"></i> Manajemen Sistem</a></li>
+        <li class="active">Kota/Kabupaten</li>
       </ol>
     </section>
     @yield('action-content')

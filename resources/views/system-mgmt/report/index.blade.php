@@ -6,25 +6,25 @@
   <div class="box-header">
     <div class="row">
         <div class="col-sm-4">
-          <h3 class="box-title">List of hired employees</h3>
+          <h3 class="box-title">Daftar Karyawan Yang Direkrut</h3>
         </div>
-        <div class="col-sm-4">
+        <!-- <div class="col-sm-4">
             <form class="form-horizontal" role="form" method="POST" action="{{ route('report.excel') }}">
                 {{ csrf_field() }}
                 <input type="hidden" value="{{$searchingVals['from']}}" name="from" />
                 <input type="hidden" value="{{$searchingVals['to']}}" name="to" />
                 <button type="submit" class="btn btn-primary">
-                  Export to Excel
+                  Export Excel
                 </button>
             </form>
-        </div>
+        </div> -->
         <div class="col-sm-4">
             <form class="form-horizontal" role="form" method="POST" action="{{ route('report.pdf') }}">
                 {{ csrf_field() }}
                 <input type="hidden" value="{{$searchingVals['from']}}" name="from" />
                 <input type="hidden" value="{{$searchingVals['to']}}" name="to" />
                 <button type="submit" class="btn btn-info">
-                  Export to PDF
+                <i class="far fa-file-pdf"></i> Export PDF
                 </button>
             </form>
         </div>
@@ -50,10 +50,10 @@
           <table id="example2" class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info">
             <thead>
               <tr role="row">
-                <th width = "20%" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending">Employee Name</th>
-                <th width = "20%" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Birthday: activate to sort column ascending">Birthday</th>
-                <th width = "40%" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Address: activate to sort column ascending">Address</th>
-                <th width = "20%" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Birthday: activate to sort column ascending">Hired Day</th>
+                <th width = "20%" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending">Nama Karyawan</th>
+                <th width = "20%" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Birthday: activate to sort column ascending">Tanggal Lahir</th>
+                <th width = "40%" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Address: activate to sort column ascending">Alamat</th>
+                <th width = "20%" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Birthday: activate to sort column ascending">Tanggal Masuk Kerja</th>
               </tr>
             </thead>
             <tbody>
@@ -66,20 +66,12 @@
               </tr>
             @endforeach
             </tbody>
-            <tfoot>
-              <tr role="row">
-                  <th width = "20%" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending">Employee Name</th>
-                  <th width = "20%" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Birthday: activate to sort column ascending">Birthday</th>
-                  <th width = "40%" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Address: activate to sort column ascending">Address</th>
-                  <th width = "20%" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Birthday: activate to sort column ascending">Hired Day</th>
-              </tr>
-            </tfoot>
           </table>
         </div>
       </div>
       <div class="row">
         <div class="col-sm-12">
-          <div class="dataTables_info" id="example2_info" role="status" aria-live="polite">Showing 1 to {{count($employees)}} of {{count($employees)}} entries</div>
+          <div class="dataTables_info" id="example2_info" role="status" aria-live="polite">Menampilkan 1 sampai {{count($employees)}} dari {{count($employees)}} data</div>
         </div>
       </div>
     </div>

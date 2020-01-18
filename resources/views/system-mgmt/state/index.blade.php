@@ -47,11 +47,11 @@
                     <form class="row" method="POST" action="{{ route('state.destroy', ['id' => $state->id]) }}" onsubmit = "return confirm('Apakah Anda Yakin Ingin Menghapus Data Provinsi ?')">
                         <input type="hidden" name="_method" value="DELETE">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                        <a href="{{ route('state.edit', ['id' => $state->id]) }}" class="btn btn-warning col-sm-3 col-xs-5 btn-margin">
+                        <a href="{{ route('state.edit', ['id' => $state->id]) }}" class="btn btn-warning btn-margin">
                           <span class="glyphicon glyphicon-pencil"></span>
                           Edit
                         </a>
-                        <button type="submit" class="btn btn-danger col-sm-3 col-xs-5 btn-margin">
+                        <button type="submit" class="btn btn-danger btn-margin">
                           <span class="glyphicon glyphicon-trash"></span>
                           Hapus
                         </button>

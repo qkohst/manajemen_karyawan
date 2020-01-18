@@ -24,17 +24,17 @@
   </head>
   <body>
     <div class="container">
-        <div><h2>List of hired employees from {{$searchingVals['from']}} to {{$searchingVals['to']}}</h2></div>
+        <div><h2>Daftar Karyawan Yang Direkrut Dari {{$searchingVals['from']}} Sampai {{$searchingVals['to']}}</h2></div>
        <table id="example2" role="grid">
             <thead>
               <tr role="row">
-                <th width="20%">Name</th>
-                <th width="20%">Address</th>
-                <th width="10%">Age</th>
-                <th width="15%">Birthdate</th>
-                <th width="15%">Hired Date</th>
-                <th width="10%">Department</th>
-                <th width="10%">Division</th>             
+                <th width="20%">Nama Karyawan</th>
+                <th width="20%">Alamat</th>
+                <th width="10%">Umur</th>
+                <th width="15%">Tanggal Lahir</th>
+                <th width="15%">Tanggal Masuk Kerja</th>
+                <th width="10%">Departemen</th>
+                <th width="10%">Devisi</th>             
               </tr>
             </thead>
             <tbody>

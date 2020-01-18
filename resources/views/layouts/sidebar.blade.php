@@ -19,7 +19,7 @@
       <!-- Sidebar Menu -->
       <ul class="sidebar-menu">
         <!-- Optionally, you can add icons to the links -->
-        <li><a href="/"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+        <li><a href="/"><span class="glyphicon glyphicon-dashboard"></span> <span>Dashboard</span></a></li>
         <li><a href="{{ url('employee-management') }}"><i class="fa fa-users"></i> <span>Manajemen Karyawan</span></a></li>
         <li class="treeview">
           <a href="#"><i class="fa fa-cogs"></i> <span>Manajemen Sistem</span>

@@ -47,14 +47,14 @@ class ReportController extends Controller
         ];
         $employees = $this->getExportingData($constraints);
         $pdf = PDF::loadView('system-mgmt/report/pdf', ['employees' => $employees, 'searchingVals' => $constraints]);
-        return $pdf->download('report_from_'. $request['from'].'_to_'.$request['to'].'pdf');
+        return $pdf->download('Laporan_dari_'. $request['from'].'_ke_'.$request['to'].'.pdf');
         // return view('system-mgmt/report/pdf', ['employees' => $employees, 'searchingVals' => $constraints]);
     }
     
     private function prepareExportingData($request) {
         $author = Auth::user()->username;
         $employees = $this->getExportingData(['from'=> $request['from'], 'to' => $request['to']]);
-        return Excel::create('report_from_'. $request['from'].'_to_'.$request['to'], function($excel) use($employees, $request, $author) {
+        return Excel::create('Laporan_dari_'. $request['from'].'_ke_'.$request['to'], function($excel) use($employees, $request, $author) {
 
         // Set the title
         $excel->setTitle('List of hired employees from '. $request['from'].' to '. $request['to']);

@@ -5,13 +5,13 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Update state</div>
+                <div class="panel-heading">Edit Provinsi</div>
                 <div class="panel-body">
                     <form class="form-horizontal" role="form" method="POST" action="{{ route('state.update', ['id' => $state->id]) }}">
                         <input type="hidden" name="_method" value="PATCH">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                            <label for="name" class="col-md-4 control-label">State Name</label>
+                            <label for="name" class="col-md-4 control-label">Nama Provinsi</label>
 
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control" name="name" value="{{ $state->name }}" required autofocus>
@@ -24,7 +24,7 @@
                             </div>
                         </div>
                           <div class="form-group">
-                            <label class="col-md-4 control-label">Country</label>
+                            <label class="col-md-4 control-label">Negara</label>
                             <div class="col-md-6">
                                 <select class="form-control" name="country_id">
                                     @foreach ($countries as $country)
@@ -36,7 +36,7 @@
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
-                                    Update
+                                    <span class="glyphicon glyphicon-edit"></span>   Simpan Edit
                                 </button>
                             </div>
                         </div>
