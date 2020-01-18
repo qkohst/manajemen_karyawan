@@ -23,6 +23,7 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('dashboard');
+        $users = User::paginate(5);
+        return view('dashboard',  ['users' => $users]);
     }
 }

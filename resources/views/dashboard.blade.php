@@ -77,7 +77,70 @@ desired effect
     <!-- Main content -->
     <section class="content">
 
-      <!-- Your Page Content Here -->
+    <div class="row">
+                <div class="container-fluid">
+                    <!-- Small boxes (Stat box) -->
+                    <div class="row">
+                      <div class="col-lg-3 col-6">
+                        <!-- small box -->
+                        <div class="small-box bg-primary">
+                          <div class="inner">
+                            <h3>{{DB::table('department')->count()}}</h3>
+
+                            <p>Departemen</p>
+                          </div>
+                          <div class="icon">
+                            <i class="nav-icon fas fa-columns"></i>
+                          </div>
+                          <a href="#" class="small-box-footer">Lihat Detail <i class="fas fa-arrow-circle-right"></i></a>
+                        </div>
+                      </div>
+                      <div class="col-lg-3 col-6">
+                        <!-- small box -->
+                        <div class="small-box bg-primary">
+                          <div class="inner">
+                            <h3>{{DB::table('division')->count()}}</h3>
+
+                            <p>Devisi</p>
+                          </div>
+                          <div class="icon">
+                            <i class="nav-icon fas fa-sitemap"></i>
+                          </div>
+                          <a href="#" class="small-box-footer">Lihat Detail <i class="fas fa-arrow-circle-right"></i></a>
+                        </div>
+                      </div>
+                      <div class="col-lg-3 col-6">
+                        <!-- small box -->
+                        <div class="small-box bg-primary">
+                          <div class="inner">
+                            <h3>{{DB::table('employees')->count()}}</h3>
+
+                            <p>Karyawan</p>
+                          </div>
+                          <div class="icon">
+                            <i class="nav-icon fas fa-users"></i>
+                          </div>
+                          <a href="#" class="small-box-footer">Lihat Detail <i class="fas fa-arrow-circle-right"></i></a>
+                        </div>
+                      </div>
+                      <!-- ./col -->
+                      <div class="col-lg-3 col-6">
+                        <!-- small box -->
+                        <div class="small-box bg-primary">
+                          <div class="inner">
+                            <h3>{{DB::table('users')->count()}}</h3>
+
+                            <p>Pengguna</p>
+                          </div>
+                          <div class="icon">
+                            <i class="nav-icon fas fa-user"></i>
+                          </div>
+                          <a href="#" class="small-box-footer">Lihat Detail <i class="fas fa-arrow-circle-right"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+      </div>
 
     </section>
     <!-- /.content -->
