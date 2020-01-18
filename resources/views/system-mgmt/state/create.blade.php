@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Tambah Provinsi</div>
+                <div class="panel-heading"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Tambah Provinsi</div>
                 <div class="panel-body">
                     <form class="form-horizontal" role="form" method="POST" action="{{ route('state.store') }}">
                         {{ csrf_field() }}
@@ -35,9 +35,11 @@
                         </div>
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-success">
                                     <span class="glyphicon glyphicon-saved"></span> Simpan
                                 </button>
+                                <a class="btn btn-danger" href="../state" role="button"> <span class="glyphicon glyphicon-remove-sign"></span> Batal</a>
+
                             </div>
                         </div>
                     </form>

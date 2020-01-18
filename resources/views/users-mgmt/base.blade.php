@@ -7,7 +7,7 @@
         Manajemen Pengguna
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-user"></i> Sistem Manajemen Karyawan</a></li>
+        <li><a href="/"><i class="fa fa-user"></i> Sistem Manajemen Karyawan</a></li>
         <li class="active">Manajemen Pengguna</li>
       </ol>
     </section>

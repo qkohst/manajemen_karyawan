@@ -1,12 +1,16 @@
-<!DOCTYPE html>
-<!--
-This is a starter template page. Use this page to start your new project from
-scratch. This page gets rid of all links and provides the needed markup only.
--->
-<html>
-  <head>
-  </head>
-  <body>
-    <h1>Hello {{ Auth::user()->username}}, comming soon</h1>
-  </body>
-</html>
+@extends('layouts.app-template')
+@section('content')
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Profile Pengguna
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-user"></i> Pengguna</a></li>
+        <li class="active">Profile</li>
+      </ol>
+    </section>
+    
+  </div>
+@endsection

@@ -9,7 +9,7 @@
           <h3 class="box-title">Daftar Pengguna</h3>
         </div>
         <div class="col-sm-4">
-          <a class="btn btn-primary" href="{{ route('user-management.create') }}"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Tambah Pengguna</a>
+          <a class="btn btn-primary pull-right" href="{{ route('user-management.create') }}"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Tambah Pengguna</a>
         </div>
     </div>
   </div>
@@ -21,7 +21,7 @@
       </div>
       <form method="POST" action="{{ route('user-management.search') }}">
          {{ csrf_field() }}
-         @component('layouts.search', ['title' => 'Search'])
+         @component('layouts.search', ['title' => 'Pencarian Data'])
           @component('layouts.two-cols-search-row', ['items' => ['User Name', 'First Name'], 
           'oldVals' => [isset($searchingVals) ? $searchingVals['username'] : '', isset($searchingVals) ? $searchingVals['firstname'] : '']])
           @endcomponent
@@ -38,7 +38,7 @@
             <thead>
               <tr role="row">
                 <th width="10%" class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Name: activate to sort column descending" aria-sort="ascending">User Name</th>
-                <th width="20%" class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Email: activate to sort column ascending">Email</th>
+                <th width="30%" class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Email: activate to sort column ascending">Email</th>
                 <th width="20%" class="sorting hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Email: activate to sort column ascending">Nama Depan</th>
                 <th width="20%" class="sorting hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Email: activate to sort column ascending">Nama Belakang</th>
                 <th tabindex="0" aria-controls="example2" rowspan="1" colspan="2" aria-label="Action: activate to sort column ascending">Aksi</th>

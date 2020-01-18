@@ -7,7 +7,8 @@
         Pengaturan Devisi
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-cogs"></i> Manajemen Sistem</a></li>
+        <li><a href="/"><i class="fa fa-cogs"></i> Sistem Manajemen Karyawan</a></li>
+        <li class="active">Manajemen Sistem</li>
         <li class="active">Devisi</li>
       </ol>
     </section>

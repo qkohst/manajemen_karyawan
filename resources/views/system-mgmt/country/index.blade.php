@@ -9,7 +9,7 @@
           <h3 class="box-title">Daftar Negara</h3>
         </div>
         <div class="col-sm-4">
-          <a class="btn btn-primary" href="{{ route('country.create') }}"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Tambah Negara</a>
+          <a class="btn btn-primary pull-right" href="{{ route('country.create') }}"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Tambah Negara</a>
         </div>
     </div>
   </div>
@@ -22,7 +22,7 @@
       <form method="POST" action="{{ route('country.search') }}">
          {{ csrf_field() }}
          @component('layouts.search', ['title' => 'Pencarian Data'])
-          @component('layouts.two-cols-search-row', ['items' => ['Kode Negara', 'Nama'], 
+          @component('layouts.two-cols-search-row', ['items' => ['country_code', 'name'], 
           'oldVals' => [isset($searchingVals) ? $searchingVals['country_code'] : '', isset($searchingVals) ? $searchingVals['name'] : '']])
           @endcomponent
         @endcomponent
@@ -34,7 +34,7 @@
             <thead>
               <tr role="row">
                 <th width="20%" class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="country: activate to sort column ascending">Kode Negara</th>
-                <th width="20%" class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="country: activate to sort column ascending">Nama Negara</th>
+                <th width="50%" class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="country: activate to sort column ascending">Nama Negara</th>
                 <th tabindex="0" aria-controls="example2" rowspan="1" colspan="2" aria-label="Action: activate to sort column ascending">Aksi</th>
               </tr>
             </thead>

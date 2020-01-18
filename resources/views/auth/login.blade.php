@@ -56,9 +56,9 @@
                                     Login
                                 </button>
 
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
+                                <!-- <a class="btn btn-link" href="{{ route('password.request') }}">
                                     Lupa Password ?
-                                </a>
+                                </a> -->
                             </div>
                         </div>
                     </form>

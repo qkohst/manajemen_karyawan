@@ -69,7 +69,7 @@ desired effect
         Dashboard
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><span class="glyphicon glyphicon-dashboard"></span> Manajemen Karyawan</a></li>
+        <li><a href="/"><span class="glyphicon glyphicon-dashboard"></span> Sistem Manajemen Karyawan</a></li>
         <li class="active">Dashboard</li>
       </ol>
     </section>
@@ -92,7 +92,7 @@ desired effect
                           <div class="icon">
                             <i class="nav-icon fas fa-columns"></i>
                           </div>
-                          <a href="#" class="small-box-footer">Lihat Detail <i class="fas fa-arrow-circle-right"></i></a>
+                          <a href="system-management/department" class="small-box-footer">Lihat Detail <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
                       </div>
                       <div class="col-lg-3 col-6">
@@ -106,7 +106,7 @@ desired effect
                           <div class="icon">
                             <i class="nav-icon fas fa-sitemap"></i>
                           </div>
-                          <a href="#" class="small-box-footer">Lihat Detail <i class="fas fa-arrow-circle-right"></i></a>
+                          <a href="system-management/division" class="small-box-footer">Lihat Detail <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
                       </div>
                       <div class="col-lg-3 col-6">
@@ -120,7 +120,7 @@ desired effect
                           <div class="icon">
                             <i class="nav-icon fas fa-users"></i>
                           </div>
-                          <a href="#" class="small-box-footer">Lihat Detail <i class="fas fa-arrow-circle-right"></i></a>
+                          <a href="employee-management" class="small-box-footer">Lihat Detail <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
                       </div>
                       <!-- ./col -->
@@ -135,7 +135,7 @@ desired effect
                           <div class="icon">
                             <i class="nav-icon fas fa-user"></i>
                           </div>
-                          <a href="#" class="small-box-footer">Lihat Detail <i class="fas fa-arrow-circle-right"></i></a>
+                          <a href="user-management" class="small-box-footer">Lihat Detail <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
                       </div>
                     </div>

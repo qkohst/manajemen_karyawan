@@ -9,7 +9,7 @@
           <h3 class="box-title">Daftar Kota/Kabupaten</h3>
         </div>
         <div class="col-sm-4">
-          <a class="btn btn-primary" href="{{ route('city.create') }}"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Tambah Kota/Kabupaten</a>
+          <a class="btn btn-primary pull-right" href="{{ route('city.create') }}"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Tambah Kota/Kabupaten</a>
         </div>
     </div>
   </div>
@@ -21,8 +21,8 @@
       </div>
       <form method="POST" action="{{ route('city.search') }}">
          {{ csrf_field() }}
-         @component('layouts.search', ['title' => 'Search'])
-          @component('layouts.two-cols-search-row', ['items' => ['Name'], 
+         @component('layouts.search', ['title' => 'Pencarian Data'])
+          @component('layouts.two-cols-search-row', ['items' => ['name'], 
           'oldVals' => [isset($searchingVals) ? $searchingVals['name'] : '']])
           @endcomponent
         @endcomponent
@@ -33,8 +33,8 @@
           <table id="example2" class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info">
             <thead>
               <tr role="row">
-                <th width="20%" class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="city: activate to sort column ascending">Nama Kota/Kabupaten</th>
-                <th width="20%" class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="state: activate to sort column ascending">Nama Provinsi</th>
+                <th width="35%" class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="city: activate to sort column ascending">Nama Kota/Kabupaten</th>
+                <th width="35%" class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="state: activate to sort column ascending">Nama Provinsi</th>
                 <th tabindex="0" aria-controls="example2" rowspan="1" colspan="2" aria-label="Action: activate to sort column ascending">Aksi</th>
               </tr>
             </thead>

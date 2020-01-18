@@ -29,7 +29,7 @@ class EmployeeManagementController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $employees = DB::table('employees')
         ->leftJoin('city', 'employees.city_id', '=', 'city.id')
