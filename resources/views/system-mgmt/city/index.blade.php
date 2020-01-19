@@ -19,20 +19,14 @@
         <div class="col-sm-6"></div>
         <div class="col-sm-6"></div>
       </div>
-      <form method="POST" action="{{ route('city.search') }}">
-         {{ csrf_field() }}
-         @component('layouts.search', ['title' => 'Pencarian Data'])
-          @component('layouts.two-cols-search-row', ['items' => ['name'], 
-          'oldVals' => [isset($searchingVals) ? $searchingVals['name'] : '']])
-          @endcomponent
-        @endcomponent
-      </form>
+     <!-- Pencarian -->
     <div id="example2_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
       <div class="row">
         <div class="col-sm-12">
           <table id="example2" class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info">
             <thead>
               <tr role="row">
+                <th width="1%" class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Name: activate to sort column descending" aria-sort="ascending">No</th>
                 <th width="35%" class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="city: activate to sort column ascending">Nama Kota/Kabupaten</th>
                 <th width="35%" class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="state: activate to sort column ascending">Nama Provinsi</th>
                 <th tabindex="0" aria-controls="example2" rowspan="1" colspan="2" aria-label="Action: activate to sort column ascending">Aksi</th>
@@ -40,8 +34,11 @@
             </thead>
             <tbody>
             {{$cities}}
+            <?php $no = 0;?>
             @foreach ($cities as $city)
+            <?php $no++ ;?>
                 <tr role="row" class="odd">
+                  <td class="sorting_1">{{$no}}</td>
                   <td>{{ $city->name }}</td>
                   <td>{{ $city->state_name }}</td>
                   <td>
@@ -66,7 +63,7 @@
       </div>
       <div class="row">
         <div class="col-sm-5">
-          <div class="dataTables_info" id="example2_info" role="status" aria-live="polite">Menampilkan 1 sampai {{count($cities)}} dari {{count($cities)}} data</div>
+          <div class="dataTables_info" id="example2_info" role="status" aria-live="polite">Menampilkan 1 sampai {{count($cities)}} dari {{DB::table('city')->count()}} data</div>
         </div>
         <div class="col-sm-7">
           <div class="dataTables_paginate paging_simple_numbers" id="example2_paginate">

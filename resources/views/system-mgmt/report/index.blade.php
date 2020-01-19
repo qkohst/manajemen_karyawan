@@ -38,7 +38,7 @@
       </div>
       <form method="POST" action="{{ route('report.search') }}">
          {{ csrf_field() }}
-         @component('layouts.search', ['title' => 'Pencarian Data'])
+         @component('layouts.search', ['title' => 'Tanggal Mulai Kerja'])
           @component('layouts.two-cols-date-search-row', ['items' => ['From', 'To'], 
           'oldVals' => [isset($searchingVals) ? $searchingVals['from'] : '', isset($searchingVals) ? $searchingVals['to'] : '']])
           @endcomponent
@@ -50,6 +50,7 @@
           <table id="example2" class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info">
             <thead>
               <tr role="row">
+                <th width="1%" class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Name: activate to sort column descending" aria-sort="ascending">No</th>
                 <th width = "20%" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending">Nama Karyawan</th>
                 <th width = "20%" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Birthday: activate to sort column ascending">Tanggal Lahir</th>
                 <th width = "40%" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Address: activate to sort column ascending">Alamat</th>
@@ -57,8 +58,11 @@
               </tr>
             </thead>
             <tbody>
+            <?php $no = 0;?>
             @foreach ($employees as $employee)
+            <?php $no++ ;?>
                 <tr role="row" class="odd">
+                  <td class="sorting_1">{{$no}}</td>
                   <td>{{ $employee->firstname }} {{ $employee->middlename }} {{ $employee->lastname }}</td>
                   <td>{{ $employee->birthdate }}</td>
                   <td>{{ $employee->address }}</td>
@@ -71,7 +75,7 @@
       </div>
       <div class="row">
         <div class="col-sm-12">
-          <div class="dataTables_info" id="example2_info" role="status" aria-live="polite">Menampilkan 1 sampai {{count($employees)}} dari {{count($employees)}} data</div>
+          <div class="dataTables_info" id="example2_info" role="status" aria-live="polite">Menampilkan 1 sampai {{count($employees)}} dari {{DB::table('employees')->count()}} data</div>
         </div>
       </div>
     </div>

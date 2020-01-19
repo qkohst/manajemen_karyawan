@@ -19,24 +19,14 @@
         <div class="col-sm-6"></div>
         <div class="col-sm-6"></div>
       </div>
-      <form method="POST" action="{{ route('user-management.search') }}">
-         {{ csrf_field() }}
-         @component('layouts.search', ['title' => 'Pencarian Data'])
-          @component('layouts.two-cols-search-row', ['items' => ['User Name', 'First Name'], 
-          'oldVals' => [isset($searchingVals) ? $searchingVals['username'] : '', isset($searchingVals) ? $searchingVals['firstname'] : '']])
-          @endcomponent
-          </br>
-          @component('layouts.two-cols-search-row', ['items' => ['Last Name', 'Department'],
-          'oldVals' => [isset($searchingVals) ? $searchingVals['lastname'] : '', isset($searchingVals) ? $searchingVals['department'] : '']])
-          @endcomponent
-        @endcomponent
-      </form>
+      <!-- Pencarian -->
     <div id="example2_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
       <div class="row">
         <div class="col-sm-12">
           <table id="example2" class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info">
             <thead>
               <tr role="row">
+                <th width="1%" class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Name: activate to sort column descending" aria-sort="ascending">No</th>
                 <th width="10%" class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Name: activate to sort column descending" aria-sort="ascending">User Name</th>
                 <th width="30%" class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Email: activate to sort column ascending">Email</th>
                 <th width="20%" class="sorting hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Email: activate to sort column ascending">Nama Depan</th>
@@ -45,8 +35,11 @@
               </tr>
             </thead>
             <tbody>
+            <?php $no = 0;?>
             @foreach ($users as $user)
+            <?php $no++ ;?>
                 <tr role="row" class="odd">
+                  <td class="sorting_1">{{$no}}</td>
                   <td class="sorting_1">{{ $user->username }}</td>
                   <td>{{ $user->email }}</td>
                   <td class="hidden-xs">{{ $user->firstname }}</td>
@@ -75,7 +68,7 @@
       </div>
       <div class="row">
         <div class="col-sm-5">
-          <div class="dataTables_info" id="example2_info" role="status" aria-live="polite">Menampilkan 1 sampai {{count($users)}} dari {{count($users)}} data</div>
+          <div class="dataTables_info" id="example2_info" role="status" aria-live="polite">Menampilkan 1 sampai {{count($users)}} dari {{DB::table('users')->count()}} data</div>
         </div>
         <div class="col-sm-7">
           <div class="dataTables_paginate paging_simple_numbers" id="example2_paginate">
