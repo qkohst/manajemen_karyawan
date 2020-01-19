@@ -33,7 +33,7 @@
                 <img src="{{ asset("/bower_components/AdminLTE/dist/img/user2-160x160.jpg") }}" class="img-circle" alt="User Image">
 
                 <p>
-                  Hallo {{ Auth::user()->username }}
+                  Hallo {{ Auth::user()->firstname }}
                 </p>
               </li>
               <!-- Menu Footer-->
@@ -44,8 +44,8 @@
                   </div>
                @else
                  <div class="pull-right">
-                    <a class="btn btn-default btn-flat" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-                    Logout
+                    <a class="btn btn-danger" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                    <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Logout
                     </a>
                  </div>
                 @endif
