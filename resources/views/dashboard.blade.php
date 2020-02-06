@@ -66,11 +66,11 @@ desired effect
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Dashboard
+        Home
       </h1>
       <ol class="breadcrumb">
         <li><a href="/"><span class="glyphicon glyphicon-dashboard"></span> Sistem Manajemen Karyawan</a></li>
-        <li class="active">Dashboard</li>
+        <li class="active">Home</li>
       </ol>
     </section>
 
